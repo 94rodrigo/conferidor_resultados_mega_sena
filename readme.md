@@ -13,7 +13,7 @@ Este é um programa em Python que confere os resultados de jogos da Mega Sena a 
 - Um arquivo `.txt` com os jogos, no formato especificado abaixo.
 
 ## Formato do Arquivo de Jogos
-Cada linha do arquivo deve conter exatamente 6 números, separados por ponto e vírgula (`;`). Por exemplo:
+Cada linha do arquivo deve conter 6 números ou mais, separados por ponto e vírgula (`;`). Por exemplo:
 ```
 1;2;3;4;5;6
 7;8;9;10;11;12
@@ -29,7 +29,7 @@ Cada linha do arquivo deve conter exatamente 6 números, separados por ponto e v
 ### Executando o Programa
 No terminal, execute o seguinte comando:
 ```bash
-python nome_do_arquivo.py
+python main.py
 ```
 
 Siga as instruções:
