@@ -37,6 +37,20 @@ def conferir_resultados(numeros_sorteados, jogos):
             resultados.append((indice, acertos))
     return resultados
 
+def mostrar_acertos_em_cada_linha(numeros_sorteados, jogos):
+    especiais = {
+        0: "Nenhum acerto",
+        1: "{acertos} acerto",
+        4: "{acertos} acertos -> QUADRA",
+        5: "{acertos} acertos -> QUINA",
+        6: "{acertos} acertos -> SENA"
+    }
+
+    for indice, jogo in enumerate(jogos, start=1):
+        acertos = contar_acertos(jogo, numeros_sorteados)
+        mensagem = especiais.get(acertos, "{acertos} acertos").format(acertos=acertos)
+        print(f"Linha {indice}: {mensagem}")
+
 # Programa principal
 def main():
     print("Bem-vindo ao conferidor de resultados da Mega Sena!")
@@ -55,9 +69,11 @@ def main():
     if resultados:
         print("\nJogos com 4 acertos ou mais:")
         for indice, acertos in resultados:
-            print(f"Linha {indice}: {acertos} acertos")
+            print(f"Linha {indice}: {acertos} acertos\n\n")
     else:
-        print("\nNenhum jogo obteve 4 acertos ou mais.")
+        print("\nNenhum jogo obteve 4 acertos ou mais.\n\n")
+
+    mostrar_acertos_em_cada_linha(numeros_sorteados, jogos)
 
 if __name__ == "__main__":
     main()
